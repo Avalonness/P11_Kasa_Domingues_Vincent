@@ -1,0 +1,108 @@
+/* ----------------------------------------
+                HEADER DETAILS
+---------------------------------------- */
+
+.details_container {
+    width: 80%;
+    margin: auto;
+    height: 100vh;
+}
+
+.header_details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_details h2{
+    font-size: 36px;
+}
+
+.header_details p{
+    font-size: 18px;
+}
+
+.header_details__profil {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.header_details__profil img {
+    height: 64px;
+    border-radius: 50%;
+}
+
+.host_name {
+    width: 60%;
+    text-align: center;
+}
+
+/* ----------------------------------------
+                MID DETAILS
+---------------------------------------- */
+
+.mid_details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mid_details__tag{
+    display: flex;
+    padding-top: 20px;
+}
+
+.tag_details {
+    width: 115px;
+    height: 25px;
+    background-color: #FF6060;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+/* ----------------------------------------
+                LOW DETAILS
+---------------------------------------- */
+
+.low_details{
+    padding-top: 50px;
+    display: flex;
+}
+
+/* ----------------------------------------
+                CAROUSEL
+---------------------------------------- */
+.carousel_container{
+    position: relative;
+}
+
+.carousel_container button {
+    border: none;
+    background: none;
+}
+
+.carousel_container .previous{
+    position: absolute;
+    top: 40%;
+    left: 0;
+}
+
+.carousel_container .next{
+    position: absolute;
+    top: 40%;
+    right: 0;
+}
+
+.carousel_container button img{
+    height: 75px;
+
+}
+
+.carousel_container img {
+    height: 415px;
+    width: 100%;
+    object-fit: cover;
+}

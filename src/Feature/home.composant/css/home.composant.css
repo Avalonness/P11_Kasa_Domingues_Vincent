@@ -1,0 +1,16 @@
+
+.home_main-container {
+    width: 80%;
+    margin: auto;
+  }
+  
+.card_container {
+  background-color: #F6F6F6;
+  border-radius: 25px;
+  margin-top: 40px;
+  padding: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

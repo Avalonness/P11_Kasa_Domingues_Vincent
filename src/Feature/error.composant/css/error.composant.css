@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.error_main-container {
+    color: #FF6060;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.error_main-container h2{
+    font-size: 255px;
+}
+
+.error_main-container p {
+    font-size: 36px;
+}
+
+
+.error_main-container a {
+    color: #FF6060;
+    text-decoration: underline;
+}
