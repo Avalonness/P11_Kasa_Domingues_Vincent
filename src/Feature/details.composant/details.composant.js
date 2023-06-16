@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './css/details.composant.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import starEmpty from '../../Shared/assets/empty_star.png';
 import starFull from '../../Shared/assets/full_star.png';
 import Onglet from '../../Layout/onglet.layout/onglet.layout';
@@ -8,7 +8,8 @@ import previous from "../../Shared/assets/precedent.png"
 import next from "../../Shared/assets/suivant.png"
 
 function CardDetails() {
-  const { id } = useParams(); 
+  const { id } = useParams();
+  const navigate = useNavigate();
   const [cardData, setCardData] = useState({});
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -17,10 +18,15 @@ function CardDetails() {
       .then(response => response.json())
       .then(data => {
         const card = data.find(item => item.id === id);
-        setCardData(card);
+        if (!card) {
+          navigate('/404'); // Redirige vers la page 404 si l'ID n'est pas trouvé
+        } else {
+          setCardData(card);
+        }
       })
       .catch(error => console.log(error));
-  }, [id]); 
+  }, [id, navigate]);
+
 
   const { 
     title, 
@@ -59,35 +65,38 @@ function CardDetails() {
             <div>
                 <button onClick={prevSlide} className='previous'><img src={previous} alt="précédent"/></button>
                 {pictures && <img src={pictures[currentIndex]} alt={`slide ${currentIndex + 1}`} />}
+                <div className='compteur_carousel'>{pictures && <p>{currentIndex + 1}/{pictures.length}</p>}</div>
                 <button onClick={nextSlide} className='next'><img src={next} alt="suivant"/></button>
             </div>
         </div>
         <div className='header_details'>
-            <div className='header_details__information'>
-                <h2>{title}</h2>
-                <p>{location}</p>
+              <div className='header_details__information'>
+                  <h2>{title}</h2>
+                  <p>{location}</p>
+                  <div className='mid_details__tag'>
+              {tags && tags.map((tag, index) => (
+              <div className='tag_details' key={index}>
+                  <span>{tag}</span>
+              </div>
+              ))} 
+              </div>
             </div>
-            <div className='header_details__profil'>
-                <p className='host_name'>{host?.name}</p> {/* opérateur optionnel ?. */}
-                <img src={host?.picture} alt="Propriétaire du bien immobilier"/> {/* opérateur optionnel ?. */}
+            
+            <div className=' header_details_right'>
+              <div className='header_details__profil'>
+                    <p className='host_name'>{host?.name}</p> {/* opérateur optionnel ?. */}
+                    <img src={host?.picture} alt="Propriétaire du bien immobilier"/> {/* opérateur optionnel ?. */}
+                </div>
+
+                <div className='mid_details__rate'>
+                {stars.map((star, index) => (
+              <img key={index} src={star} alt="star" />
+            ))}  
+                </div> 
             </div>
         </div>
     
-        <div className='mid_details'>
-            <div className='mid_details__tag'>
-            {tags && tags.map((tag, index) => (
-            <div className='tag_details' key={index}>
-                <span>{tag}</span>
-            </div>
-            ))} 
-            </div>
 
-            <div className='mid_details__rate'>
-            {stars.map((star, index) => (
-          <img key={index} src={star} alt="star" />
-        ))}  
-            </div> 
-        </div>
 
         <div className='low_details'>
         <Onglet title="Description" content={description} />

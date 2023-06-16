@@ -30,3 +30,21 @@
     color: white;
     z-index: 1;
   }
+
+  @media (max-width: 933px) {
+    .home_banner {
+      height: 111px;
+      width: 90%;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .home_banner p {
+      font-size: 24px;
+      color: white;
+      z-index: 1;
+      width: 70%;
+    }
+    
+  }

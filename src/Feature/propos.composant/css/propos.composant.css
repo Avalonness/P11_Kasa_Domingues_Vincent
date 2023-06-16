@@ -10,3 +10,16 @@
     align-items: center;
     padding-top: 30px;
 }
+
+@media (max-width: 768px) {
+
+    .propos_container{
+        width: 100%;
+        min-height: 80vh;
+        margin: auto;
+    }
+    
+    .propos_container .home_banner {
+        height: 220px;
+    }
+  }

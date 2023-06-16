@@ -29,3 +29,31 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media (max-width: 933px) {
+    .header_main-container {
+        width: 90%;
+        height: 5vh;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    
+    }
+
+    .header_logo img {
+        height: 30px;
+    }
+
+    .header_nav {
+        width: 45%;
+    }
+
+    .header_nav a{
+        color: #FF6060;
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+        font-size: 18px;
+    }
+  }

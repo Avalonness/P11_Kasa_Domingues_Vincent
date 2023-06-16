@@ -23,3 +23,21 @@
     padding: 30px 15px;
     font-size: 24px;
 }
+
+@media (max-width: 768px) {
+
+    .tab_container{
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .tab-content{
+        font-size: 18px;
+    }
+
+    .tab_header {
+        font-size: 20px;
+    }
+    
+  }

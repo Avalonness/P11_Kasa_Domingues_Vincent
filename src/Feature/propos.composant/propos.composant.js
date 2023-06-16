@@ -7,16 +7,18 @@ import Onglet from '../../Layout/onglet.layout/onglet.layout';
 function ProposComponent() {
   return (
     <div className='propos_container'>
-      <Banner backgroundImage={imgBannerPropos}/>
+      <div className='banner_container'>
+        <Banner backgroundImage={imgBannerPropos} className="propos_banner"/>
+      </div>
       <div className='onglet_container'>
         <Onglet title="Fiabilité" content="
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada odio sed maximus imperdiet. Nullam ut magna maximus, pretium lorem id, imperdiet mauris. Ut cursus, dolor id scelerisque aliquet, metus massa porta augue, tincidunt cursus ligula eros eget diam. Vivamus ullamcorper lacinia elit, non eleifend erat iaculis id. Sed vitae augue vitae felis sodales mattis eu id risus. Ut placerat dui risus, imperdiet dapibus urna scelerisque eu. Duis aliquet metus sit amet dui ullamcorper condimentum. Suspendisse tristique interdum nisl quis volutpat. Maecenas aliquet et massa non tempus. Maecenas eget tortor eleifend, egestas orci eget, iaculis nisi. Curabitur ultricies placerat elit." />
+ Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes." />
         <Onglet title="Respect" content="
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada odio sed maximus imperdiet. Nullam ut magna maximus, pretium lorem id, imperdiet mauris. Ut cursus, dolor id scelerisque aliquet, metus massa porta augue, tincidunt cursus ligula eros eget diam. Vivamus ullamcorper lacinia elit, non eleifend erat iaculis id. Sed vitae augue vitae felis sodales mattis eu id risus. Ut placerat dui risus, imperdiet dapibus urna scelerisque eu. Duis aliquet metus sit amet dui ullamcorper condimentum. Suspendisse tristique interdum nisl quis volutpat. Maecenas aliquet et massa non tempus. Maecenas eget tortor eleifend, egestas orci eget, iaculis nisi. Curabitur ultricies placerat elit." />
+La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme." />
         <Onglet title="Service" content="
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada odio sed maximus imperdiet. Nullam ut magna maximus, pretium lorem id, imperdiet mauris. Ut cursus, dolor id scelerisque aliquet, metus massa porta augue, tincidunt cursus ligula eros eget diam. Vivamus ullamcorper lacinia elit, non eleifend erat iaculis id. Sed vitae augue vitae felis sodales mattis eu id risus. Ut placerat dui risus, imperdiet dapibus urna scelerisque eu. Duis aliquet metus sit amet dui ullamcorper condimentum. Suspendisse tristique interdum nisl quis volutpat. Maecenas aliquet et massa non tempus. Maecenas eget tortor eleifend, egestas orci eget, iaculis nisi. Curabitur ultricies placerat elit." />
+Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question." />
         <Onglet title="Sécurité" content="
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada odio sed maximus imperdiet. Nullam ut magna maximus, pretium lorem id, imperdiet mauris. Ut cursus, dolor id scelerisque aliquet, metus massa porta augue, tincidunt cursus ligula eros eget diam. Vivamus ullamcorper lacinia elit, non eleifend erat iaculis id. Sed vitae augue vitae felis sodales mattis eu id risus. Ut placerat dui risus, imperdiet dapibus urna scelerisque eu. Duis aliquet metus sit amet dui ullamcorper condimentum. Suspendisse tristique interdum nisl quis volutpat. Maecenas aliquet et massa non tempus. Maecenas eget tortor eleifend, egestas orci eget, iaculis nisi. Curabitur ultricies placerat elit." />
+La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes." />
       </div>  
     </div>
   );
