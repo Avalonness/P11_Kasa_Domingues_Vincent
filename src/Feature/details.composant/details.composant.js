@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './css/details.composant.css';
 import { useParams, useNavigate } from 'react-router-dom';
-import starEmpty from '../../Shared/assets/empty_star.png';
-import starFull from '../../Shared/assets/full_star.png';
 import Onglet from '../../Layout/onglet.layout/onglet.layout';
-import previous from "../../Shared/assets/precedent.png"
-import next from "../../Shared/assets/suivant.png"
+import Star from '../../Layout/star.layout/star.layout';
+import Carrousel from '../../Layout/carrousel.layout/carrousel.layout';
 
 function CardDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [cardData, setCardData] = useState({});
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     fetch('https://raw.githubusercontent.com/Avalonness/P11-front-end-search-engine/master/kasa.json')
@@ -39,36 +36,10 @@ function CardDetails() {
     tags 
   } = cardData;
 
-  const stars = [];
-  for (let i = 0; i < 5; i++) {
-    stars.push(i < rating ? starFull : starEmpty);
-  }
-
-  const nextSlide = () => {
-    if (pictures) {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % pictures.length);
-    }
-  };
-  
-  const prevSlide = () => {
-    if (pictures) {
-      setCurrentIndex((prevIndex) => {
-        if (prevIndex === 0) return pictures.length - 1;
-        return prevIndex - 1;
-      });
-    }
-  };
 
   return (
     <div className='details_container'>
-        <div className='carousel_container'>
-            <div>
-                <button onClick={prevSlide} className='previous'><img src={previous} alt="précédent"/></button>
-                {pictures && <img src={pictures[currentIndex]} alt={`slide ${currentIndex + 1}`} />}
-                <div className='compteur_carousel'>{pictures && <p>{currentIndex + 1}/{pictures.length}</p>}</div>
-                <button onClick={nextSlide} className='next'><img src={next} alt="suivant"/></button>
-            </div>
-        </div>
+        <Carrousel pictures={pictures} />
         <div className='header_details'>
               <div className='header_details__information'>
                   <h2>{title}</h2>
@@ -88,11 +59,7 @@ function CardDetails() {
                     <img src={host?.picture} alt="Propriétaire du bien immobilier"/> {/* opérateur optionnel ?. */}
                 </div>
 
-                <div className='mid_details__rate'>
-                {stars.map((star, index) => (
-              <img key={index} src={star} alt="star" />
-            ))}  
-                </div> 
+                <Star rating={rating} />
             </div>
         </div>
     
